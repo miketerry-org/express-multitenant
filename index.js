@@ -1,3 +1,5 @@
+// index.js:
+
 "use strict";
 
 // Load required modules
@@ -56,8 +58,27 @@ function encryptAES256(data, key) {
  * A class to manage tenant configurations.
  */
 class Tenants {
-  constructor() {
-    this.#list = [];
+  // initialize private variables
+  #connectDBFunc = undefined;
+  #list = [];
+
+  set connectDBFunc(value) {
+    // Ensure the parameter is provided, is a function, and accepts exactly one parameter
+    if (typeof value !== "function") {
+      throw new Error(
+        'The "connectDBFunc" property must be assigned a function.'
+      );
+    }
+
+    // Check if the function accepts exactly one parameter
+    if (value.length !== 1) {
+      throw new Error(
+        'The "connectDBFunc" property must be assigned a function that accepts exactly one "config" object parameter.'
+      );
+    }
+
+    // keep track of the connectDB function
+    this.#connectDBFunc = value;
   }
 
   /**
@@ -78,6 +99,11 @@ class Tenants {
     // ensure host property is not a duplicate
     if (this.find(config.host)) {
       throw new Error(`Tenant with "${config.host}" property already exists!`);
+    }
+
+    // ensure config does not have a "db" property
+    if (config.db) {
+      throw new Error(`Tenant configuration must not contain "db" property`);
     }
 
     // push the tenant config to the array
@@ -121,7 +147,7 @@ class Tenants {
       // clear any existing tenant configurations
       this.#list = [];
 
-      // loop thru  array adding them to internal list, this performs validation
+      // loop thru  array adding them to internal list, this performs validation and connects to the database
       list.forEach((item) => this.add(item));
 
       // Return the array of tenant configuration objects
@@ -167,11 +193,30 @@ class Tenants {
    * @param {Function} next - The next middleware function.
    */
   middleware(req, res, next) {
-    let tenant = this.find(req.host);
-    if (tenant) {
-      req.tenant = tenant;
+    // if locals is not defined then initialize it
+    if (!req.locals) {
+      req.locals = {};
     }
-    next(); // Proceed to next middleware
+
+    // use request host to find tenant
+    let tenant = this.find(req.host);
+
+    // if tenant found
+    if (tenant) {
+      // assign to locals so it can be used in the view engine
+      req.locals.tenant = tenant;
+
+      // connect to database if first time this tenant is referenced
+      if (!tenant.db) {
+        tenant.db = this.#connectDBFunc(tenant);
+      }
+
+      // assign the tenant database to the request
+      req.db = tenant.db;
+    }
+
+    // call the next middleware
+    next();
   }
 }
 
