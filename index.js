@@ -62,6 +62,16 @@ class Tenants {
   #connectDBFunc = undefined;
   #list = [];
 
+  connectDB(config) {
+    // ensure the connectDBfunc property has been assigned
+    if (!this.#connectDBFunc) {
+      throw new Error(`The Tenant "connectDBFunc" property must be assigned.`);
+    }
+
+    // connect to the database and return the database instance to be assigned to requests
+    return this.#connectDBFunc(config);
+  }
+
   set connectDBFunc(value) {
     // Ensure the parameter is provided, is a function, and accepts exactly one parameter
     if (typeof value !== "function") {
@@ -208,7 +218,7 @@ class Tenants {
 
       // connect to database if first time this tenant is referenced
       if (!tenant.db) {
-        tenant.db = this.#connectDBFunc(tenant);
+        tenant.db = connectDB(tenant);
       }
 
       // assign the tenant database to the request
