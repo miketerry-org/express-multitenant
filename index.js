@@ -116,9 +116,15 @@ class Tenants {
         : fileContent;
 
       // Parse the content (decrypted or plain) as JSON
-      this.#list = JSON.parse(contentToParse);
+      let list = JSON.parse(contentToParse);
 
-      // Return the parsed JSON (which should be an array of objects)
+      // clear any existing tenant configurations
+      this.#list = [];
+
+      // loop thru  array adding them to internal list, this performs validation
+      list.forEach((item) => this.add(item));
+
+      // Return the array of tenant configuration objects
       return this.#list;
     } catch (error) {
       // If an error occurs, log it and throw the error
