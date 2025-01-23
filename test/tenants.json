@@ -1,0 +1,23 @@
+[
+  {
+    "domain": "localhost",
+    "database_url": "data/prod.sqlite",
+    "project_title": "Sample Web App",
+    "project_slogan": "Simple sample multi tenant web application",
+    "project_owner": "miketerry.org"
+  },
+  {
+    "domain": "dev.localhost",
+    "database_url": "data/dev.sqlite",
+    "project_title": "Sample Web App (DEV)",
+    "project_slogan": "Simple sample multi tenant web application",
+    "project_owner": "miketerry.org"
+  },
+  {
+    "domain": "domain.localhost",
+    "database_url": "data/test.sqlite",
+    "project_title": "Sample Web App (test)",
+    "project_slogan": "Simple sample multi tenant web application",
+    "project_owner": "miketerry.org"
+  }
+]
