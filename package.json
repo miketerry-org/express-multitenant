@@ -1,5 +1,5 @@
 {
-  "name": "express-multitenant",
+  "name": "express-tenants",
   "version": "0.5.0",
   "description": "Multitenant support for express applications",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miketerry-org/express-multitenant.git"
+    "url": "git+https://github.com/miketerry-org/express-tenants.git"
   },
   "keywords": [
     "express",
@@ -18,7 +18,7 @@
   "author": "miketerry.org",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/miketerry-org/express-multitenant/issues"
+    "url": "https://github.com/miketerry-org/express-tenants/issues"
   },
-  "homepage": "https://github.com/miketerry-org/express-multitenant#readme"
+  "homepage": "https://github.com/miketerry-org/express-tenants#readme"
 }
