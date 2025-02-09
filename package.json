@@ -4,6 +4,7 @@
   "description": "Multitenant support for express applications",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=DEV node --watch index.js",
     "test": "jest"
   },
   "repository": {
