@@ -1,6 +1,6 @@
 {
   "name": "express-tenants",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Multitenant support for express applications",
   "main": "index.js",
   "scripts": {
