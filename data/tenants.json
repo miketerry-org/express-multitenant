@@ -22,7 +22,7 @@
       "pool": {
         "min": 2,
         "max": 10,
-        "idleTimeoutMillis": 30000
+        "idle": 30000
       },
       "encrypt_cypher": "",
       "encrypt_key": ""
@@ -57,7 +57,7 @@
       "pool": {
         "min": 2,
         "max": 10,
-        "idleTimeoutMillis": 30000
+        "idle": 30000
       },
       "encrypt_cypher": "",
       "encrypt_key": ""
@@ -92,7 +92,7 @@
       "pool": {
         "min": 2,
         "max": 10,
-        "idleTimeoutMillis": 30000
+        "idle": 30000
       },
       "encrypt_cypher": "",
       "encrypt_key": ""

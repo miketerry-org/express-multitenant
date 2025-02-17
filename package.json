@@ -1,11 +1,11 @@
 {
   "name": "express-tenants",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "Multitenant support for express applications",
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=DEV node --watch index.js",
-    "test": "jest"
+    "test": "jest --bail --watch"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/miketerry-org/express-tenants/issues"
   },
-  "homepage": "https://github.com/miketerry-org/express-tenants#readme"
+  "homepage": "https://github.com/miketerry-org/express-tenants#readme",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "json-rule": "^0.5.6",
+    "topsecret": "^0.5.0"
+  }
 }
