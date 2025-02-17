@@ -4,13 +4,17 @@
 const Tenants = require("../lib/tenants");
 const data = require("./data");
 
+function fakeDBConnect(config) {
+  return undefined;
+}
+
 test("new tenants", () => {
-  const tenants = new Tenants();
+  const tenants = new Tenants(fakeDBConnect);
   expect(tenants.length).toBe(0);
 });
 
 test("tenants.add", () => {
-  const tenants = new Tenants();
+  const tenants = new Tenants(fakeDBConnect);
   tenants.add(data[0]);
   //  expect(tenants.length).toBe(1);
 });

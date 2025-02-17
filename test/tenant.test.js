@@ -6,8 +6,12 @@ const Tenant = require("../lib/tenant");
 //const rule = require("../lib/tenantRule");
 const data = require("./data");
 
+function fakeDBConnect(config) {
+  return undefined;
+}
+
 test("new tenant", () => {
-  const tenant = new Tenant(data[0]);
+  const tenant = new Tenant(data[0], fakeDBConnect);
   expect(tenant.tenant_id).toBe(data[0].tenant_id);
   expect(tenant.node_id).toBe(data[0].node_id);
   expect(tenant.hostname).toBe(data[0].hostname);
@@ -16,20 +20,20 @@ test("new tenant", () => {
   expect(tenant.locals.owner).toBe(data[0].locals.owner);
   expect(tenant.locals.copyright).toBe(data[0].locals.copyright);
   expect(tenant.locals.roles).toStrictEqual(data[0].locals.roles);
-  expect(tenant.database.url).toBe(data[0].database.url);
-  expect(tenant.database.host).toBe(data[0].database.host);
-  expect(tenant.database.port).toBe(data[0].database.port);
-  expect(tenant.database.username).toBe(data[0].database.username);
-  expect(tenant.database.password).toBe(data[0].database.password);
-  expect(tenant.database.ssl).toBe(data[0].database.ssl);
-  expect(tenant.database.charset).toBe(data[0].database.charset);
-  expect(tenant.database.pool.min).toBe(data[0].database.pool.min);
-  expect(tenant.database.pool.max).toBe(data[0].database.pool.max);
-  expect(tenant.database.pool.idle).toBe(data[0].database.pool.idle);
-  expect(tenant.database.encrypt_cypher).toBe(data[0].database.encrypt_cypher);
-  expect(tenant.database.encrypt_key).toBe(data[0].database.encrypt_key);
-  expect(tenant.smtp.host).toBe(data[0].smtp.host);
-  expect(tenant.smtp.username).toBe(data[0].smtp.username);
-  expect(tenant.smtp.password).toBe(data[0].smtp.password);
-  expect(tenant.smtp.sender).toBe(data[0].smtp.sender);
+  expect(tenant.dbConfig.url).toBe(data[0].dbConfig.url);
+  expect(tenant.dbConfig.host).toBe(data[0].dbConfig.host);
+  expect(tenant.dbConfig.port).toBe(data[0].dbConfig.port);
+  expect(tenant.dbConfig.username).toBe(data[0].dbConfig.username);
+  expect(tenant.dbConfig.password).toBe(data[0].dbConfig.password);
+  expect(tenant.dbConfig.ssl).toBe(data[0].dbConfig.ssl);
+  expect(tenant.dbConfig.charset).toBe(data[0].dbConfig.charset);
+  expect(tenant.dbConfig.pool.min).toBe(data[0].dbConfig.pool.min);
+  expect(tenant.dbConfig.pool.max).toBe(data[0].dbConfig.pool.max);
+  expect(tenant.dbConfig.pool.idle).toBe(data[0].dbConfig.pool.idle);
+  expect(tenant.dbConfig.encrypt_cypher).toBe(data[0].dbConfig.encrypt_cypher);
+  expect(tenant.dbConfig.encrypt_key).toBe(data[0].dbConfig.encrypt_key);
+  expect(tenant.smtpConfig.host).toBe(data[0].smtpConfig.host);
+  expect(tenant.smtpConfig.username).toBe(data[0].smtpConfig.username);
+  expect(tenant.smtpConfig.password).toBe(data[0].smtpConfig.password);
+  expect(tenant.smtpConfig.sender).toBe(data[0].smtpConfig.sender);
 });

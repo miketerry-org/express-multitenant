@@ -10,7 +10,7 @@
       "copyright": 2025,
       "roles": ["Guest", "subscriber", "Admin"]
     },
-    "database": {
+    "dbConfig": {
       "url": "/data/mvc-starter.sqlite",
       "host": null,
       "port": null,
@@ -27,7 +27,7 @@
       "encrypt_cypher": "",
       "encrypt_key": ""
     },
-    "smtp": {
+    "smtpConfig": {
       "host": "smtp.miketerry.org",
       "username": "support@miketerry.org",
       "password": "abcd-1234",
@@ -45,7 +45,7 @@
       "copyright": 2025,
       "roles": ["Guest", "subscriber", "designer", "Admin"]
     },
-    "database": {
+    "dbConfig": {
       "url": "/data/mvc-starter-alpha.sqlite",
       "host": null,
       "port": null,
@@ -62,7 +62,7 @@
       "encrypt_cypher": "",
       "encrypt_key": ""
     },
-    "smtp": {
+    "smtpConfig": {
       "host": "smtp.miketerry.org",
       "username": "support@miketerry.org",
       "password": "abcd-1234",
@@ -80,7 +80,7 @@
       "copyright": 2025,
       "roles": ["Guest", "subscriber", "Admin"]
     },
-    "database": {
+    "dbConfig": {
       "url": "/data/mvc-starter-beta.sqlite",
       "host": null,
       "port": null,
@@ -97,7 +97,7 @@
       "encrypt_cypher": "",
       "encrypt_key": ""
     },
-    "smtp": {
+    "smtpConfig": {
       "host": "smtp.miketerry.org",
       "username": "support@miketerry.org",
       "password": "abcd-1234",

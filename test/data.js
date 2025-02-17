@@ -12,7 +12,7 @@ const data = [
       copyright: 2025,
       roles: ["Guest", "subscriber", "Admin"],
     },
-    database: {
+    dbConfig: {
       url: "/data/mvc-starter.sqlite",
       host: null,
       port: null,
@@ -29,8 +29,8 @@ const data = [
       encrypt_cypher: "",
       encrypt_key: "",
     },
-    smtp: {
-      host: "smtp.miketerry.org",
+    smtpConfig: {
+      host: "smtpConfig.miketerry.org",
       port: 587,
       username: "support@miketerry.org",
       password: "abcd-1234",
@@ -48,7 +48,7 @@ const data = [
       copyright: 2025,
       roles: ["Guest", "subscriber", "designer", "Admin"],
     },
-    database: {
+    dbConfig: {
       url: "/data/mvc-starter-alpha.sqlite",
       host: null,
       port: null,
@@ -65,8 +65,8 @@ const data = [
       encrypt_cypher: "",
       encrypt_key: "",
     },
-    smtp: {
-      host: "smtp.miketerry.org",
+    smtpConfig: {
+      host: "smtpConfig.miketerry.org",
       port: 587,
       username: "support@miketerry.org",
       password: "abcd-1234",
@@ -84,7 +84,7 @@ const data = [
       copyright: 2025,
       roles: ["Guest", "subscriber", "Admin"],
     },
-    database: {
+    dbConfig: {
       url: "/data/mvc-starter-beta.sqlite",
       host: null,
       port: null,
@@ -101,8 +101,8 @@ const data = [
       encrypt_cypher: "",
       encrypt_key: "",
     },
-    smtp: {
-      host: "smtp.miketerry.org",
+    smtpConfig: {
+      host: "smtpConfig.miketerry.org",
       port: 587,
       username: "support@miketerry.org",
       password: "abcd-1234",
