@@ -1,8 +1,7 @@
 .ds_store
-.enigma.env
 .env
 .git
-enigma-env-key.txt
+.tenants.json
+.tenants.key
 node_modules
 package-lock.json
-secret-key.txt

@@ -1,10 +1,13 @@
 {
   "name": "express-tenants",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Multitenant support for express applications",
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=DEV node --watch index.js",
+    "encrypt": "topsecret encrypt .tenants.json .tenants.secure --key-file .tenants.key",
+    "generate": "topsecret generate --key-file .tenants.key",
+    "version": "topsecret --version",
     "test": "jest --bail --watch"
   },
   "repository": {
