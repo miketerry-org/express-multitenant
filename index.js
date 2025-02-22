@@ -3,7 +3,7 @@
 "use strict";
 
 // load all necessary modules
-const TopSecret = require("topsecret");
 const Tenant = require("./lib/tenant");
+const tenants = require("./lib/tenants");
 
-module.exports = { Tenant };
+module.exports = { Tenant, tenants };
