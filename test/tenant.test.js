@@ -11,7 +11,7 @@ function fakeDBConnect(config) {
 }
 
 test("new tenant", () => {
-  const tenant = new Tenant(data[0], fakeDBConnect);
+  const tenant = new Tenant(data[0]);
   expect(tenant.tenant_id).toBe(data[0].tenant_id);
   expect(tenant.node_id).toBe(data[0].node_id);
   expect(tenant.hostname).toBe(data[0].hostname);
@@ -36,4 +36,10 @@ test("new tenant", () => {
   expect(tenant.smtpConfig.username).toBe(data[0].smtpConfig.username);
   expect(tenant.smtpConfig.password).toBe(data[0].smtpConfig.password);
   expect(tenant.smtpConfig.sender).toBe(data[0].smtpConfig.sender);
+});
+
+test("set dbConnectFunc", () => {
+  const tenant = new Tenant(data[0]);
+  tenant.dbConnectFunc = fakeDBConnect;
+  expect(tenant.dbConnectFunc).toBe(fakeDBConnect);
 });

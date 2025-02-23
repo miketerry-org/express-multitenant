@@ -9,12 +9,12 @@ function fakeDBConnect(config) {
 }
 
 test("new tenants", () => {
-  const tenants = new Tenants(fakeDBConnect);
+  const tenants = new Tenants();
   expect(tenants.length).toBe(0);
 });
 
 test("tenants.add", () => {
-  const tenants = new Tenants(fakeDBConnect);
+  const tenants = new Tenants();
   tenants.add(data[0]);
-  //  expect(tenants.length).toBe(1);
+  expect(tenants.length).toBe(1);
 });
