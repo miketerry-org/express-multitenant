@@ -36,6 +36,7 @@ test("new tenant", () => {
   expect(tenant.smtpConfig.username).toBe(data[0].smtpConfig.username);
   expect(tenant.smtpConfig.password).toBe(data[0].smtpConfig.password);
   expect(tenant.smtpConfig.sender).toBe(data[0].smtpConfig.sender);
+  expect(tenant.connected).toBe(false);
 });
 
 test("set dbConnectFunc", () => {
