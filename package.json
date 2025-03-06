@@ -1,6 +1,6 @@
 {
   "name": "express-tenants",
-  "version": "0.7.4",
+  "version": "0.7.6",
   "description": "Multitenant support for express applications",
   "main": "index.js",
   "scripts": {
@@ -26,8 +26,9 @@
   },
   "homepage": "https://github.com/miketerry-org/express-tenants#readme",
   "dependencies": {
-    "jest": "^29.7.0",
-    "json-rule": "^0.5.6",
     "topsecret": "^0.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
