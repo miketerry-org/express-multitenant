@@ -3,5 +3,6 @@
 .git
 .tenants.json
 .tenants.key
+.tenants.secure
 node_modules
 package-lock.json
