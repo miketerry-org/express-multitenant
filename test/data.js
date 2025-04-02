@@ -1,78 +1,45 @@
 // data.js:
 
-const data = [
-  {
-    tenant_id: 1,
-    node_id: 1,
-    hostname: "www.mvc-starter",
-    locals: {
-      site_title: "MVC Starter (public)",
-      site_slogan:
-        "Best little Model, View, Controller web application starter",
-      site_owner: "miketerry.org",
-      site_copyright: 2025,
-      roles: ["Guest", "subscriber", "Admin"],
-    },
-    dbConfig: {
-      url: "/data/mvc-starter.sqlite",
-      options: {},
-    },
-    smtpConfig: {
-      host: "smtpConfig.miketerry.org",
-      port: 587,
-      username: "support@miketerry.org",
-      password: "abcd-1234",
-      sender: "support@miketerry.org",
-    },
-  },
-  {
-    tenant_id: 2,
-    node_id: 1,
-    hostname: "alpha.mvc-starter",
-    locals: {
-      site_title: "MVC Starter (alpha)",
-      site_slogan:
-        "Best little Model, View, Controller web application starter",
-      site_owner: "miketerry.org",
-      site_copyright: 2025,
-      roles: ["Guest", "subscriber", "designer", "Admin"],
-    },
-    dbConfig: {
-      url: "/data/mvc-starter-alpha.sqlite",
-      options: {},
-    },
-    smtpConfig: {
-      host: "smtpConfig.miketerry.org",
-      port: 587,
-      username: "support@miketerry.org",
-      password: "abcd-1234",
-      sender: "support@miketerry.org",
-    },
-  },
-  {
-    tenant_id: 3,
-    node_id: 1,
-    hostname: "beta.mvc-starter",
-    locals: {
-      site_title: "MVC Starter (beta)",
-      site_slogan:
-        "Best little Model, View, Controller web application starter",
-      site_owner: "miketerry.org",
-      site_copyright: 2025,
-      roles: ["Guest", "subscriber", "Admin"],
-    },
-    dbConfig: {
-      url: "/data/mvc-starter-beta.sqlite",
-      options: {},
-    },
-    smtpConfig: {
-      host: "smtpConfig.miketerry.org",
-      port: 587,
-      username: "support@miketerry.org",
-      password: "abcd-1234",
-      sender: "support@miketerry.org",
-    },
-  },
-];
+"use strict";
 
-module.exports = data;
+const validConfig = {
+  tenant_id: 1,
+  node_id: 1,
+  domain: "www.sample.com",
+  site_title: "Sample Web site",
+  site_slogan: "Slogan for sample web site",
+  site_owner: "Sample LLC",
+  site_copyright: 2025,
+  site_roles: ["Guest", "subscriber", "Support", "Admin"],
+  site_support_email: "support@sample.com",
+  site_support_url: "https://www.sample.com/support",
+  db_url: "./data.sqlite",
+  log_folder: "./logs",
+  mailer_host: "smtp.sample.com",
+  mailer_username: "it@sample.com",
+  mailer_password: "Abcdef-123456",
+  mailer_sender: "support@sample.com",
+};
+
+const invalidConfig = {
+  tenant_id: "a",
+  node_id: "b",
+  domainX: "www.sample.com",
+  site_title: "Sample Web site",
+  site_slogan: "Slogan for sample web site",
+  site_owner: "Sample LLC",
+  site_copyright: 2025,
+  site_roles: ["Guest", "subscriber", "Support", "Admin"],
+  site_support_email: "support@sample.com",
+  site_support_url: "https://www.sample.com/support",
+  db_url: "./data.sqlite",
+  log_folder: "./logs",
+  mailer_host: "smtp.sample.com",
+  mailer_username: "it@sample.com",
+  mailer_password: "Abcdef-123456",
+  mailer_sender: "support@sample.com",
+};
+
+const emptyConfig = {};
+
+module.exports = { validConfig, invalidConfig, emptyConfig };
