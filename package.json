@@ -1,6 +1,6 @@
 {
   "name": "express-tenants",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Multitenant support for express applications",
   "main": "index.js",
   "scripts": {
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/miketerry-org/express-tenants#readme",
   "devDependencies": {
     "better-sqlite3-orm": "^0.5.2",
-    "node-mailer": "^0.1.1"
+    "nodemailer": "^6.10.0",
+    "winston": "^3.17.0"
   }
 }
