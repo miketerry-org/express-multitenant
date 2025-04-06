@@ -13,7 +13,7 @@ const validConfig = {
   site_roles: ["Guest", "subscriber", "Support", "Admin"],
   site_support_email: "support@sample.com",
   site_support_url: "https://www.sample.com/support",
-  db_url: "./data.sqlite",
+  db_url: "mongodb://localhost:27017/test",
   log_folder: "./logs",
   mailer_host: "smtp.sample.com",
   mailer_username: "it@sample.com",

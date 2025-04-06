@@ -1,0 +1,22 @@
+[
+  {
+    "node_id": 1,
+    "tenant_id": 1,
+    "domain": "test.web-starter",
+    "db_url": "mongodb://localhost/web-starter-test",
+    "log_collection_name": "logs",
+    "log_expiration_days": 1,
+    "log_capped": true,
+    "log_max_size": 1,
+    "log_max_docs": 1000,
+    "site_title": "test.local",
+    "site_slogan": "Testing the best little web application starter",
+    "site_owner": "miketerry.org",
+    "site_copyright": 2025,
+    "site_roles": ["Guest", "Subscriber", "Support", "Admin"],
+    "site_support_email": "support@miketerry.org",
+    "site_support_url": "https://test.web-starter/support",
+    "mailer_password": "Abcdef-123456",
+    "mailer_sender": "support@miketerry.org"
+  }
+]
