@@ -8,13 +8,14 @@
     "encrypt": "topsecret encrypt .tenants.json .tenants.secure --key-file .tenants.key",
     "generate": "topsecret generate --key-file .tenants.key",
     "version": "topsecret --version",
-    "test": "node --watch --test"
+    "test": "jest --watch --detectOpenHandles"
   },
   "dependencies": {
     "confirm-json": "^2.0.3",
     "topsecret": "^0.7.4"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "mongoose": "^8.13.2",
     "nodemailer": "^6.10.0",
     "winston": "^3.17.0",
